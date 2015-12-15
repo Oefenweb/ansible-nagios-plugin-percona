@@ -1,0 +1,17 @@
+# tasks file for nagios-plugin-percona
+---
+- name: install | dependencies
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items: nagios_plugin_percona_dependencies
+  tags:
+    - nagios-plugin-percona-install-dependencies
+
+- name: install | additional
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items: nagios_plugin_percona_install
+  tags:
+    - nagios-plugin-percona-install-additional

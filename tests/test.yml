@@ -1,0 +1,6 @@
+# test file for nagios-plugin-percona
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - ../../

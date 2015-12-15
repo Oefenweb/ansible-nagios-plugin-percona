@@ -1,0 +1,12 @@
+# tasks file for nagios-plugin-percona
+---
+- name: configure | update (user) configuration file(s)
+  template:
+    src: root/.my.cnf.j2
+    dest: "{{ item.dest | default('~' + item.owner + '/.my.cnf') }}"
+    owner: "{{ item.owner }}"
+    group: "{{ item.group | default(item.owner) }}"
+    mode: "{{ item.mode | default('0600') }}"
+  with_items: nagios_plugin_percona_my_cnf_files
+  tags:
+    - nagios-plugin-percona-configure-user-my-cnf

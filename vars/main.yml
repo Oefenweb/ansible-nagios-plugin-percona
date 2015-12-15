@@ -1,0 +1,12 @@
+# vars file for nagios-plugin-percona
+---
+nagios_plugin_percona_repositories:
+  - type: deb
+    url: "http://repo.percona.com/apt {{ ansible_lsb.codename }}"
+    component: main
+  - type: deb-src
+    url: "http://repo.percona.com/apt {{ ansible_lsb.codename }}"
+    component: main
+
+nagios_plugin_percona_dependencies:
+  - percona-nagios-plugins
