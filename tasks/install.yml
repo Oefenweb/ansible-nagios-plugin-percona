@@ -15,3 +15,20 @@
   with_items: nagios_plugin_percona_install
   tags:
     - nagios-plugin-percona-install-additional
+
+- name: install | get plugins in "wrong" directory
+  shell: "ls -1dt /usr/lib64/nagios/plugins/*"
+  register: plugins_in_wrong_directory
+  changed_when: false
+  tags:
+    - nagios-plugin-percona-get-plugins
+
+- name: install | create symlinks in correct directory
+  file:
+    src: "{{ item }}"
+    dest: "/usr/lib/nagios/plugins/{{ item | basename }}"
+    state: link
+    force: true
+  with_items: plugins_in_wrong_directory.stdout_lines
+  tags:
+    - nagios-plugin-percona-create-symlinks
