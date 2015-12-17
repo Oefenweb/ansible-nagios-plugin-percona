@@ -2,3 +2,4 @@
 ---
 nagios_plugin_percona_install: []
 nagios_plugin_percona_my_cnf_files: []
+nagios_plugin_percona_ssl_map: {}
