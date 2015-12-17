@@ -12,18 +12,6 @@ None
 
 * `nagios_plugin_percona_install`: [default: `[]`]: Additional packages to install
 
-* `nagios_plugin_percona_my_cnf_files`: [default: `[]`]: `.my.cnf` files to configure
-* `nagios_plugin_percona_my_cnf_files.{n}.dest`: [optional, default: `~owner/.my.cnf'`]: The remote path of the file to copy
-* `nagios_plugin_percona_my_cnf_files.{n}.owner`: [required]: The name of the user that should own the file
-* `nagios_plugin_percona_my_cnf_files.{n}.group`: [optional, default: `owner`]: The name of the group that should own the file
-* `nagios_plugin_percona_my_cnf_files.{n}.mode`: [optional, default: `0600`]: The mode of the file
-* `nagios_plugin_percona_my_cnf_files.{n}.login_host`: [optional, default: `localhost`]: The host running the server
-* `nagios_plugin_percona_my_cnf_files.{n}.login_port`: [optional, default: `3306`]: The port of the server
-* `nagios_plugin_percona_my_cnf_files.{n}.login_user`: [optional, default: `owner`]: The username used to authenticate with
-* `nagios_plugin_percona_my_cnf_files.{n}.login_password`: [required]: The password used to authenticate with
-
-* `nagios_plugin_percona_my_cnf_files.{n}.ssl`: [optional]: Whether or not to use SSL when connection
-
 ## Dependencies
 
 None
@@ -41,28 +29,6 @@ None
 - hosts: all
   roles:
     - nagios-plugin-percona
-```
-
-##### With .my.cnf file(s)
-
-```yaml
----
-- hosts: all
-  roles:
-    - nagios-plugin-percona
-  vars:
-    nagios_plugin_percona_my_cnf_files:
-      - dest: '~root/.my.cnf'
-        owner: root
-        group: root
-        mode: '0600'
-        login_host: localhost
-        login_port: 3306
-        login_user: root
-        login_password: 'pw4Root'
-
-      - owner: vagrant
-        login_password: 'pw4Vagrant'
 ```
 
 #### License

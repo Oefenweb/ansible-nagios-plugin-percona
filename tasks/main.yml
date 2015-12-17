@@ -11,9 +11,3 @@
     - configuration
     - nagios-plugin-percona
     - nagios-plugin-percona-install
-
-- include: configure.yml
-  tags:
-    - configuration
-    - nagios-plugin-percona
-    - nagios-plugin-percona-configure
