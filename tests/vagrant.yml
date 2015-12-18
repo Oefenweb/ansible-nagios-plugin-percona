@@ -5,16 +5,3 @@
   sudo: true
   roles:
     - ../../
-  vars:
-    nagios_plugin_percona_my_cnf_files:
-      - dest: '~root/.my.cnf'
-        owner: root
-        group: root
-        mode: '0600'
-        login_host: localhost
-        login_port: 3306
-        login_user: root
-        login_password: 'pw4Root'
-
-      - owner: vagrant
-        login_password: 'pw4Vagrant'
