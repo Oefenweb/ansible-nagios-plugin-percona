@@ -5,18 +5,10 @@ role = File.basename(File.expand_path(File.dirname(__FILE__)))
 
 boxes = [
   {
-    :name => "ubuntu-1004",
-    :box => "opscode-ubuntu-10.04",
-    :url => "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-10.04_chef-provisionerless.box",
-    :ip => '10.0.0.10',
-    :cpu => "50",
-    :ram => "256"
-   },
-  {
     :name => "ubuntu-1204",
     :box => "opscode-ubuntu-12.04",
     :url => "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-12.04_chef-provisionerless.box",
-    :ip => '10.0.0.11',
+    :ip => '10.0.0.10',
     :cpu => "50",
     :ram => "256"
   },
@@ -24,15 +16,7 @@ boxes = [
     :name => "ubuntu-1404",
     :box => "opscode-ubuntu-14.04",
     :url => "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-14.04_chef-provisionerless.box",
-    :ip => '10.0.0.12',
-    :cpu => "50",
-    :ram => "256"
-  },
-  {
-    :name => "debian-6010",
-    :box => "opscode-debian-6.0.10",
-    :url => "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_debian-6.0.10_chef-provisionerless.box",
-    :ip => '10.0.0.13',
+    :ip => '10.0.0.11',
     :cpu => "50",
     :ram => "256"
   },
@@ -40,7 +24,7 @@ boxes = [
     :name => "debian-79",
     :box => "opscode-debian-7.9",
     :url => "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_debian-7.9_chef-provisionerless.box",
-    :ip => '10.0.0.14',
+    :ip => '10.0.0.12',
     :cpu => "50",
     :ram => "256"
   },
@@ -48,7 +32,7 @@ boxes = [
     :name => "debian-82",
     :box => "opscode-debian-8.2",
     :url => "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_debian-8.2_chef-provisionerless.box",
-    :ip => '10.0.0.15',
+    :ip => '10.0.0.13',
     :cpu => "50",
     :ram => "256"
   },
