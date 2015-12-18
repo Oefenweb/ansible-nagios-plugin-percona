@@ -23,6 +23,13 @@
   tags:
     - nagios-plugin-percona-get-plugins
 
+- name: install | create directory
+  file:
+    path: "/usr/lib/nagios/plugins"
+    state: directory
+  tags:
+    - nagios-plugin-percona-create-directory
+
 - name: install | create symlinks in correct directory
   file:
     src: "{{ item }}"
