@@ -37,8 +37,8 @@ MIT
 
 #### Author Information
 
-Mark van Driel
-Mischa ter Smitten
+* Mark van Driel
+* Mischa ter Smitten
 
 #### Feedback, bug-reports, requests, ...
 
