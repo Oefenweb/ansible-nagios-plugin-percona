@@ -1,0 +1,7 @@
+# test file for nagios-plugin-percona
+---
+- hosts: all
+  remote_user: vagrant
+  sudo: true
+  roles:
+    - ../../

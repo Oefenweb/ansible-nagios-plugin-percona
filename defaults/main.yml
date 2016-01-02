@@ -1,0 +1,3 @@
+# defaults file for nagios-plugin-percona
+---
+nagios_plugin_percona_install: []

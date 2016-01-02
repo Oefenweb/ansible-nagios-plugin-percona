@@ -1,0 +1,23 @@
+# meta file for nagios-plugin-percona
+---
+galaxy_info:
+  author: Mischa ter Smitten
+  company: Oefenweb.nl B.V.
+  description: Set up Percona Monitoring Plugins for Nagios in Debian-like systems
+  license: MIT
+  min_ansible_version: 1.4
+  platforms:
+    - name: Ubuntu
+      versions:
+        - precise
+        - trusty
+    - name: Debian
+      versions:
+        - wheezy
+        - jessie
+  categories:
+    - system
+    - monitoring
+    - database
+    - database:sql
+dependencies: []

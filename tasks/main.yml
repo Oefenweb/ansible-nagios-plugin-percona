@@ -1,0 +1,13 @@
+# tasks file for nagios-plugin-percona
+---
+- include: repository.yml
+  tags:
+    - configuration
+    - nagios-plugin-percona
+    - nagios-plugin-percona-repository
+
+- include: install.yml
+  tags:
+    - configuration
+    - nagios-plugin-percona
+    - nagios-plugin-percona-install
