@@ -3,21 +3,21 @@
 - name: install | dependencies
   apt:
     name: "{{ item }}"
-    state: latest
-  with_items: nagios_plugin_percona_dependencies
+    state: "{{ apt_install_state | default('latest') }}"
+  with_items: "{{ nagios_plugin_percona_dependencies }}"
   tags:
     - nagios-plugin-percona-install-dependencies
 
 - name: install | additional
   apt:
     name: "{{ item }}"
-    state: latest
-  with_items: nagios_plugin_percona_install
+    state: "{{ apt_install_state | default('latest') }}"
+  with_items: "{{ nagios_plugin_percona_install }}"
   tags:
     - nagios-plugin-percona-install-additional
 
 - name: install | get plugins in "wrong" directory
-  shell: "ls -1dt /usr/lib64/nagios/plugins/*"
+  shell: ls -1dt /usr/lib64/nagios/plugins/*
   register: plugins_in_wrong_directory
   changed_when: false
   tags:
@@ -25,7 +25,7 @@
 
 - name: install | create directory
   file:
-    path: "/usr/lib/nagios/plugins"
+    path: /usr/lib/nagios/plugins
     state: directory
   tags:
     - nagios-plugin-percona-create-directory
@@ -36,6 +36,6 @@
     dest: "/usr/lib/nagios/plugins/{{ item | basename }}"
     state: link
     force: true
-  with_items: plugins_in_wrong_directory.stdout_lines
+  with_items: "{{ plugins_in_wrong_directory.stdout_lines }}"
   tags:
     - nagios-plugin-percona-create-symlinks
