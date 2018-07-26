@@ -1,6 +1,6 @@
 ## nagios-plugin-percona 
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-nagios-plugin-percona.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-nagios-plugin-percona) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-nagios--plugin--percona-blue.svg)](https://galaxy.ansible.com/list#/roles/6547)
+[![Build Status](https://travis-ci.org/Oefenweb/ansible-nagios-plugin-percona.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-nagios-plugin-percona) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-nagios--plugin--percona-blue.svg)](https://galaxy.ansible.com/Oefenweb/nagios-plugin-percona)
 
 Set up [Percona Monitoring Plugins](https://www.percona.com/software/mysql-tools/percona-monitoring-plugins) for Nagios in Debian-like systems.
 
