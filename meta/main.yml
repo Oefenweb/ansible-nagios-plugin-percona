@@ -1,6 +1,7 @@
 # meta file for nagios-plugin-percona
 ---
 galaxy_info:
+  role_name: nagios-plugin-percona
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Set up Percona Monitoring Plugins for Nagios in Debian-like systems
