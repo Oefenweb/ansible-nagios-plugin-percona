@@ -22,5 +22,5 @@ galaxy_info:
     - system
     - monitoring
     - database
-    - database:sql
+    - sql
 dependencies: []
