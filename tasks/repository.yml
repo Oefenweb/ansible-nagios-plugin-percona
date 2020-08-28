@@ -2,13 +2,14 @@
 ---
 - name: repository | install | dependencies
   apt:
-    name: "{{ item }}"
+    name:
+      - dirmngr
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
-  with_items:
-    - dirmngr
-  when: ansible_distribution == 'Debian' and ansible_distribution_version is version('9', '>=')
+  when:
+    - ansible_distribution == 'Debian'
+    - ansible_distribution_version is version('9', '>=')
   tags:
     - nagios-plugin-percona-repository-install
     - nagios-plugin-percona-repository-install-dependencies
@@ -26,6 +27,7 @@
     repo: "{{ item.type }} {{ item.url }} {{ item.component }}"
     state: present
     update_cache: true
+    mode: 0644
   with_items: "{{ nagios_plugin_percona_repositories }}"
   tags:
     - nagios-plugin-percona-repository-add
