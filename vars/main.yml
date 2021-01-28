@@ -8,5 +8,9 @@ nagios_plugin_percona_repositories:
     url: "http://repo.percona.com/apt {{ ansible_lsb.codename }}"
     component: main
 
+nagios_plugin_percona_dependencies_pre:
+  - software-properties-common
+  - dirmngr
+
 nagios_plugin_percona_dependencies:
   - percona-nagios-plugins

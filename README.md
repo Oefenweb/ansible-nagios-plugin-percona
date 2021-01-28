@@ -7,7 +7,8 @@ Set up [Percona Monitoring Plugins](https://www.percona.com/software/mysql-tools
 
 #### Requirements
 
-None
+* `software-properties-common` (will be installed)
+* `dirmngr` (will be installed)
 
 #### Variables
 
