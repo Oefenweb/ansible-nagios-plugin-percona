@@ -1,3 +1,6 @@
 # defaults file for nagios-plugin-percona
 ---
+# Taken from https://github.com/tersmitten/percona-monitoring-plugins/actions/workflows/release.yml
+nagios_plugin_percona_package_path_src: percona-nagios-plugins_1.1.9-635751136_all.deb
+
 nagios_plugin_percona_install: []

@@ -14,3 +14,6 @@ nagios_plugin_percona_dependencies_pre:
 
 nagios_plugin_percona_dependencies:
   - percona-nagios-plugins
+
+nagios_plugin_percona_dependencies_deb_file:
+nagios_plugin_percona_package_path_dest: /var/lib/ansible/nagios-plugin-percona/package

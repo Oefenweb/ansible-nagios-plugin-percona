@@ -9,9 +9,11 @@ Set up [Percona Monitoring Plugins](https://www.percona.com/software/mysql-tools
 
 * `software-properties-common` (will be installed)
 * `dirmngr` (will be installed)
+* `xz-utils` (will be installed when `nagios_plugin_percona_package_path_src` is defined)
 
 #### Variables
 
+* `nagios_plugin_percona_package_path_src`: [optional]: Path to deb package to install (e.g. `percona-nagios-plugins_1.1.9-635751136_all.deb`)
 * `nagios_plugin_percona_install`: [default: `[]`]: Additional packages to install
 
 ## Dependencies
