@@ -1,4 +1,4 @@
-# tasks file for nagios-plugin-percona
+# tasks file
 ---
 - name: repository | install | dependencies (pre)
   apt:

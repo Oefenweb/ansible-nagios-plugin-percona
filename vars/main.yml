@@ -1,4 +1,4 @@
-# vars file for nagios-plugin-percona
+# vars file
 ---
 nagios_plugin_percona_repositories:
   - type: deb

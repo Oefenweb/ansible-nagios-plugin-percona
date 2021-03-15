@@ -1,4 +1,4 @@
-# tasks file for nagios-plugin-percona
+# tasks file
 ---
 - include: repository.yml
   when: nagios_plugin_percona_package_path_src is not defined

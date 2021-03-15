@@ -1,6 +1,7 @@
-# meta file for nagios-plugin-percona
+# meta file
 ---
 galaxy_info:
+  namespace: oefenweb
   role_name: nagios-plugin-percona
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
