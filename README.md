@@ -1,7 +1,7 @@
 ## nagios-plugin-percona
 
 [![CI](https://github.com/Oefenweb/ansible-nagios-plugin-percona/workflows/CI/badge.svg)](https://github.com/Oefenweb/ansible-nagios-plugin-percona/actions?query=workflow%3ACI)
-[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-nagios--plugin--percona-blue.svg)](https://galaxy.ansible.com/Oefenweb/nagios-plugin-percona)
+[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-nagios--plugin--percona-blue.svg)](https://galaxy.ansible.com/Oefenweb/nagios_plugin_percona)
 
 Set up [Percona Monitoring Plugins](https://www.percona.com/software/mysql-tools/percona-monitoring-plugins) for Nagios in Debian-like systems.
 

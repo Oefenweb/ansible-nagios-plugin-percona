@@ -2,7 +2,7 @@
 ---
 galaxy_info:
   namespace: oefenweb
-  role_name: nagios-plugin-percona
+  role_name: nagios_plugin_percona
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Set up Percona Monitoring Plugins for Nagios in Debian-like systems
