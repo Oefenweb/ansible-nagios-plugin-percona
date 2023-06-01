@@ -1,9 +1,10 @@
 # tasks file
 ---
-- block:
-
+- name: install
+  when: nagios_plugin_percona_package_path_src is not defined
+  block:
     - name: install | dependencies
-      apt:
+      ansible.builtin.apt:
         name: "{{ nagios_plugin_percona_dependencies }}"
         state: "{{ apt_install_state | default('latest') }}"
         update_cache: true
@@ -11,12 +12,11 @@
       tags:
         - nagios-plugin-percona-install-dependencies
 
-  when: nagios_plugin_percona_package_path_src is not defined
-
-- block:
-
+- name: install
+  when: nagios_plugin_percona_package_path_src is defined
+  block:
     - name: install | dependencies
-      apt:
+      ansible.builtin.apt:
         name:
           # To prevent: There is no member named 'control'
           - xz-utils
@@ -27,7 +27,7 @@
         - nagios-plugin-percona-install-dependencies
 
     - name: install | create (download) directory
-      file:
+      ansible.builtin.file:
         path: "{{ nagios_plugin_percona_package_path_dest }}"
         state: directory
         owner: root
@@ -38,7 +38,7 @@
         - nagios-plugin-percona-install-download-directory
 
     - name: install | copy deb
-      copy:
+      ansible.builtin.copy:
         src: "{{ nagios_plugin_percona_package_path_src }}"
         dest: "{{ nagios_plugin_percona_package_path_dest }}/{{ nagios_plugin_percona_package_path_src | basename }}"
         owner: root
@@ -49,7 +49,7 @@
         - nagios-plugin-percona-install-download-deb
 
     - name: install | install deb
-      apt:
+      ansible.builtin.apt:
         update_cache: true
         cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
         deb: "{{ nagios_plugin_percona_package_path_dest }}/{{ nagios_plugin_percona_package_path_src | basename }}"
@@ -57,17 +57,15 @@
         - nagios-plugin-percona-install-install
         - nagios-plugin-percona-install-install-deb
 
-  when: nagios_plugin_percona_package_path_src is defined
-
 - name: install | additional
-  apt:
+  ansible.builtin.apt:
     name: "{{ nagios_plugin_percona_install }}"
     state: "{{ apt_install_state | default('latest') }}"
   tags:
     - nagios-plugin-percona-install-additional
 
 - name: install | get plugins in "wrong" directory
-  shell: >
+  ansible.builtin.shell: >
     ls -1dt /usr/lib64/nagios/plugins/*
   register: _plugins_in_wrong_directory
   changed_when: false
@@ -75,7 +73,7 @@
     - nagios-plugin-percona-get-plugins
 
 - name: install | create directory
-  file:
+  ansible.builtin.file:
     path: /usr/lib/nagios/plugins
     state: directory
     mode: 0755
@@ -83,7 +81,7 @@
     - nagios-plugin-percona-create-directory
 
 - name: install | create symlinks in correct directory
-  file:
+  ansible.builtin.file:
     src: "{{ item }}"
     dest: "/usr/lib/nagios/plugins/{{ item | basename }}"
     state: link
