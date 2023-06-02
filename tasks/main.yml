@@ -1,13 +1,15 @@
 # tasks file
 ---
-- include: repository.yml
+- name: repository
+  ansible.builtin.import_tasks: repository.yml
   when: nagios_plugin_percona_package_path_src is not defined
   tags:
     - configuration
     - nagios-plugin-percona
     - nagios-plugin-percona-repository
 
-- include: install.yml
+- name: install
+  ansible.builtin.import_tasks: install.yml
   tags:
     - configuration
     - nagios-plugin-percona
