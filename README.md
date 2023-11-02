@@ -32,7 +32,7 @@ None
 ---
 - hosts: all
   roles:
-    - nagios-plugin-percona
+    - oefenweb.nagios-plugin-percona
 ```
 
 #### License
