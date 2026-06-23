@@ -23,7 +23,7 @@
     repo: "{{ item.type }} {{ item.url }} {{ item.component }}"
     state: present
     update_cache: true
-    mode: 0644
+    mode: '0644'
   with_items: "{{ nagios_plugin_percona_repositories }}"
   tags:
     - nagios-plugin-percona-repository-add
@@ -34,6 +34,6 @@
     dest: /etc/apt/preferences.d/00percona.pref
     owner: root
     group: root
-    mode: 0644
+    mode: '0644'
   tags:
     - nagios-plugin-percona-repository-apt-pin
