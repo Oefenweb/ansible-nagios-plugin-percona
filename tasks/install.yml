@@ -32,7 +32,7 @@
         state: directory
         owner: root
         group: root
-        mode: 0755
+        mode: '0755'
       tags:
         - nagios-plugin-percona-install-download
         - nagios-plugin-percona-install-download-directory
@@ -43,7 +43,7 @@
         dest: "{{ nagios_plugin_percona_package_path_dest }}/{{ nagios_plugin_percona_package_path_src | basename }}"
         owner: root
         group: root
-        mode: 0644
+        mode: '0644'
       tags:
         - nagios-plugin-percona-install-download
         - nagios-plugin-percona-install-download-deb
@@ -76,7 +76,7 @@
   ansible.builtin.file:
     path: /usr/lib/nagios/plugins
     state: directory
-    mode: 0755
+    mode: '0755'
   tags:
     - nagios-plugin-percona-create-directory
 
